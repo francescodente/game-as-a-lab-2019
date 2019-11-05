@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerShooting))]
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement playerMovement;
+    private PlayerShooting playerShooting;
     private Plane groundPlane;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        playerShooting = GetComponent<PlayerShooting>();
         groundPlane = new Plane(Vector3.up, Vector3.zero);
     }
 
@@ -19,6 +22,7 @@ public class PlayerInput : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        HandleShooting();
     }
 
     private void HandleMovement()
@@ -39,6 +43,14 @@ public class PlayerInput : MonoBehaviour
             Vector3 mousePointOnGround = mouseRay.GetPoint(distance);
             //Debug.DrawLine(mouseRay.origin, mousePointOnGround, Color.red);
             playerMovement.LookAt(mousePointOnGround);
+        }
+    }
+
+    private void HandleShooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            playerShooting.TryShooting();
         }
     }
 }
