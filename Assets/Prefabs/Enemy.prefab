@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4957630033808845955}
   - component: {fileID: 8663371087024198229}
   - component: {fileID: 5460597464153428601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820570807082528893}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4099396014395887371}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,8 @@ GameObject:
   - component: {fileID: 871483464561157869}
   - component: {fileID: 3834453982655955030}
   - component: {fileID: 9078114325413144310}
-  m_Layer: 0
+  - component: {fileID: 1678347352}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,3 +194,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   pathUpdateRate: 4
+--- !u!114 &1678347352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170102484708680486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f38dc74b4d14f4f96b86e33f87d26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100

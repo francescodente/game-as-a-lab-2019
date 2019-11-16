@@ -7,8 +7,8 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField]
     private Transform target;
+
     [SerializeField]
     private float pathUpdateRate = 4;
 

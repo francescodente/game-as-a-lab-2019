@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     private float speed = 15;
     [SerializeField]
     private float lifetime = 5;
+    [SerializeField]
+    private int damage = 25;
 
     private Rigidbody rb;
 
@@ -23,8 +25,13 @@ public class Projectile : MonoBehaviour
         rb.MovePosition(rb.position + transform.forward * speed * Time.fixedDeltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        IDamageable damageable = collision.collider.GetComponentInParent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }
