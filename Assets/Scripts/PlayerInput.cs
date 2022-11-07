@@ -41,7 +41,6 @@ public class PlayerInput : MonoBehaviour
         if (groundPlane.Raycast(mouseRay, out float distance))
         {
             Vector3 mousePointOnGround = mouseRay.GetPoint(distance);
-            //Debug.DrawLine(mouseRay.origin, mousePointOnGround, Color.red);
             playerMovement.LookAt(mousePointOnGround);
         }
     }
